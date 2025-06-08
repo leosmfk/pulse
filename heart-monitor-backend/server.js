@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:3001", "http://10.232.32.9:3001"],
+    origin: ["http://localhost:3001", "http://10.232.32.9:3001", "https://pulse-ten-cyan.vercel.app"],
     methods: ["GET", "POST"]
   }
 });
@@ -33,7 +33,7 @@ redisClient.connect().catch(console.error);
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3001', 'http://10.232.32.9:3001'],
+  origin: ['http://localhost:3001', 'http://10.232.32.9:3001', 'https://pulse-ten-cyan.vercel.app'],
   credentials: true
 }));
 app.use(express.json());

@@ -3,6 +3,7 @@ import { io } from 'socket.io-client';
 import HeartRateChart from './components/HeartRateChart';
 import HeartBeatDisplay from './components/HeartBeatDisplay';
 import StatusIndicator from './components/StatusIndicator';
+import config from './config';
 
 interface HeartRateData {
   bpm: number;
@@ -17,7 +18,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     // Initialize socket connection
-    const newSocket = io('http://localhost:3000');
+    const newSocket = io(config.BACKEND_URL, config.SOCKET_OPTIONS);
 
     // Connection event handlers
     newSocket.on('connect', () => {

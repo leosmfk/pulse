@@ -22,7 +22,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "REACT_APP_BACKEND_URL=http://10.232.32.9:3000 react-scripts start",
     "build": "react-scripts build",
+    "build:prod": "REACT_APP_BACKEND_URL=http://10.232.32.9:3000 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
